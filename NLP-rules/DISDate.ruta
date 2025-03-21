@@ -1,0 +1,37 @@
+PACKAGE gr.ilsp.nlp.dis.titles.ruta;
+
+// import the types of this type system:
+TYPESYSTEM gr.ilsp.types.DISTypeSystem;
+TYPESYSTEM gr.ilsp.types.ILSPTypeSystem;
+
+IMPORT gr.ilsp.types.Sentence AS Sent;
+DECLARE Month;
+DECLARE Year;
+
+
+//Token{REGEXP("\\d{2}\\/\\d{2}\\/\\d{4}") -> MARK(DISDate)};
+Token{REGEXP("\\d{1,2}(\\/|\\-)\\d{1,2}(\\/|\\-)\\d{2,4}") -> MARK(DISDate)}; //17/5/1948
+
+// <Μάιος 48>
+Token{REGEXP(Token.lemma.value, "(Ιανουάριος|Φεβρουάριος|Μάρτιος|Απρίλιος|Μάιος|Ιούνιος|Ιούλιος|Αύγουστος|Σεπτέμβριος|Οκτώβριος|Νοέμβριος|Δεκέμβριος)")->MARK(Month)};
+Month Token{REGEXP("\\d{2,4}") -> MARK(Year)};
+(Month Year){ -> MARK(DISDate)};
+
+// </Μάιος 48>
+
+Token{REGEXP("^(ΑΠΟ|ΤΗΣ|ΕΩΣ|ΣΤΙΣ)")-> MARK(DateInit)} DISDate;
+Token{REGEXP("^(ΤΗΝ)")-> MARK(DateInit)} DISDate;
+Token{REGEXP(Token.posTag.value, "AtDf.*Ac")->MARK(DateInit)} DISDate;
+
+// Chunk{AND(CONTAINS(DISDate), -CONTAINS(Chunk, 3,100)) -> MARK(DISDate)};
+(DateInit DISDate{ -> UNMARK(DISDate)}){ -> MARK(DISDate)};
+
+DISDate{PARTOFNEQ(DISDate) -> UNMARK(DISDate)};
+
+DECLARE FirstDISDate;
+DISDate{POSITION(gr.ilsp.types.Sentence,1,true)->MARK(FirstDISDate)};
+
+
+Month{-> UNMARK(Month)};
+Year {-> UNMARK(Year )};
+
