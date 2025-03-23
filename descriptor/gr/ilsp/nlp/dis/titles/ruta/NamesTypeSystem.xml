@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>gr.ilsp.nlp.dis.titles.ruta.NamesTypeSystem</name>
+    <imports>
+        <import location="../../../../../../BasicTypeSystem.xml"/>
+        <import location="../../../../types/DISTypeSystem.xml"/>
+        <import location="../../../../types/ILSPTypeSystem.xml"/>
+    </imports>
+    <types>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.Names.NameExc</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.Names</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.Names.FirstWordInLine</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.Names</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.Names.NamePrefixCompound</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.Names</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.Names.NameII</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.Names</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.Names.NameI</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.Names</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.Names.NamePrefix</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.Names</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+    </types>
+</typeSystemDescription>

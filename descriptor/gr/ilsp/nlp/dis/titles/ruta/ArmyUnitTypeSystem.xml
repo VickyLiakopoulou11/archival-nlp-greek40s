@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnitTypeSystem</name>
+    <imports>
+        <import location="../../../../../../BasicTypeSystem.xml"/>
+        <import location="../../../../types/DISTypeSystem.xml"/>
+        <import location="../../../../types/ILSPTypeSystem.xml"/>
+    </imports>
+    <types>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.LatinNums</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.DigitNums</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.YearsRange</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.ComplexNums</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.ArmyUnitException</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.ArmyUnitPhrase</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.ArmyUnitExceptionPhrase</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.Org</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.DigitWordNums</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.TwoGreekLetters</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.GenitiveNoun</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.LatinWordNums</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.Premod</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.GreekNumsExc</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.GreekNums</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.NameInQuotes</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.ArmyUnit</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.ArmyUnit.Complex</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.ArmyUnit</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+    </types>
+</typeSystemDescription>

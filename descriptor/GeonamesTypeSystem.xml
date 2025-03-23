@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>gr.ilsp.nlp.dis.titles.ruta.GeonamesTypeSystem</name>
+    <imports>
+        <import location="BasicTypeSystem.xml"/>
+        <import location="gr/ilsp/types/DISTypeSystem.xml"/>
+        <import location="gr/ilsp/types/ILSPTypeSystem.xml"/>
+    </imports>
+    <types>
+        <typeDescription>
+            <name>gr.ilsp.nlp.dis.titles.ruta.Geonames.GeoDivisions</name>
+            <description>Type defined in gr.ilsp.nlp.dis.titles.ruta.Geonames</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+    </types>
+</typeSystemDescription>

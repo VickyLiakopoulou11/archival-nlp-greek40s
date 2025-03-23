@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>gr.ilsp.nlp.dis.titles.ruta.MainTypeSystem</name>
+    <imports>
+        <import location="BasicTypeSystem.xml"/>
+        <import location="gr/ilsp/types/DISTypeSystem.xml"/>
+        <import location="gr/ilsp/nlp/dis/titles/ruta/CleanUpAndLogTuplesTypeSystem.xml"/>
+        <import location="gr/ilsp/nlp/dis/titles/ruta/DISSendAddSubjTypeSystem.xml"/>
+        <import location="gr/ilsp/nlp/dis/titles/ruta/ArmyUnitTypeSystem.xml"/>
+        <import location="gr/ilsp/nlp/dis/titles/ruta/GeonamesTypeSystem.xml"/>
+        <import location="gr/ilsp/nlp/dis/titles/ruta/DISTypeTypeSystem.xml"/>
+        <import location="gr/ilsp/nlp/dis/titles/ruta/DISDateTypeSystem.xml"/>
+    </imports>
+</typeSystemDescription>
