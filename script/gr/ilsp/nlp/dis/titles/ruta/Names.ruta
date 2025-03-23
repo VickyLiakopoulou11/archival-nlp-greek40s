@@ -1,0 +1,49 @@
+PACKAGE gr.ilsp.nlp.dis.titles.ruta;
+
+TYPESYSTEM gr.ilsp.types.DISTypeSystem;
+TYPESYSTEM gr.ilsp.types.ILSPTypeSystem;
+
+// define and import an external dictionary containing 
+WORDLIST NamesPrefix = 'NamesPrefix.txt';
+
+DECLARE NamePrefix;
+
+// Match the lemma to the NamesPrefix wordlist
+Token{INLIST(NamesPrefix, Token.lemma.value) -> MARK(NamePrefix)};
+//NamePrefix{REGEXP(".*(ΩΝ|ΟΥΣ|ΟΙ|ΕΣ|Α)")->UNMARK(NamePrefix)};
+Token{REGEXP(Token.posTag.value, ".*Pl.*")->UNMARK(NamePrefix)};
+(Token{Token.lemma.value=="αρχείο"} "ΤΟΥ"){->MARK(NamePrefix)};
+
+WORDLIST NamesPrefixCompound = 'NamesPrefixCompound.txt';
+DECLARE NamePrefixCompound;
+Token{INLIST(NamesPrefixCompound, Token.lemma.value)->MARK(NamePrefixCompound)};
+
+(NamePrefix NamePrefixCompound){->MARK(NamePrefix)};
+NamePrefix{PARTOFNEQ(NamePrefix)->UNMARK(NamePrefix)};
+
+
+DECLARE FirstWordInLine;
+"\\n[^\\s]+"->FirstWordInLine;
+
+DECLARE NameI;
+DECLARE NameII;
+
+WORDLIST NamesExc = 'NamesExc.txt';
+DECLARE NameExc;
+Token{INLIST(NamesExc, Token.lemma.value)-> MARK(NameExc)};
+
+(NamePrefix) (ANY PERIOD?){->MARK(NameI)};
+NameI{PARTOF(NameExc)->UNMARK(NameI)};
+SPECIAL{->UNMARK(NameI)};
+(NameI{PARTOF(FirstWordInLine)}){->UNMARK(NameI)};
+
+(NameI) (ANY PERIOD?){->MARK(NameII)}; 
+NameII{PARTOF(NameExc)->UNMARK(NameII)};
+SPECIAL{->UNMARK(NameII)};
+(NameII{PARTOF(FirstWordInLine)}){->UNMARK(NameII)};
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+PACKAGE gr.ilsp.nlp.dis.titles.ruta;
+
+TYPESYSTEM gr.ilsp.types.DISTypeSystem;
+TYPESYSTEM gr.ilsp.types.ILSPTypeSystem;
+
+DISDocType{PARTOFNEQ(DISDocType) -> UNMARK(DISDocType)};
+DISDate{PARTOFNEQ(DISDate) -> UNMARK(DISDate)};
+DISSender{PARTOFNEQ(DISSender) -> UNMARK(DISSender)};
+DISAddressee{PARTOFNEQ(DISAddressee) -> UNMARK(DISAddressee)};
+DISSubject{PARTOFNEQ(DISSubject) -> UNMARK(DISSubject)};
+
+AddresseeInit {-> UNMARK(AddresseeInit)};
+SubjectInit {-> UNMARK(SubjectInit)};
+SenderInit {-> UNMARK(SenderInit)};
+DateInit {-> UNMARK(DateInit)};
+FoundPart {-> UNMARK(FoundPart)};
+
+
+
+STRING mysent;
+STRING date;
+STRING doctype;
+STRING sender;
+STRING addressee;
+STRING subject;
+
+// LOGGING
+BLOCK(ForEach) Paragraph  {} {
+
+    Document{-> ASSIGN(mysent, ""), ASSIGN(date, ""), ASSIGN(doctype, ""), ASSIGN(sender, ""), ASSIGN(addressee, ""), ASSIGN(subject, "") };
+
+    Paragraph{->ASSIGN(mysent, Paragraph.ct)};
+    DISDocType{->ASSIGN(doctype, DISDocType.ct)};
+    DISDate{->ASSIGN(date, DISDate.ct)};
+    DISSender{->ASSIGN(sender, DISSender.ct)};
+    DISAddressee{->ASSIGN(addressee, DISAddressee.ct)};
+    DISSubject{->ASSIGN(subject, DISSubject.ct)};
+
+    // LOG("SENTSTART" +  mysent + "TABTAB" + doctype  + "TABTAB" + date  + "TABTAB" + sender  + "TABTAB" + addressee  + "TABTAB" + subject + "SENTEND");
+}

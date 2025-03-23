@@ -1,0 +1,10 @@
+PACKAGE gr.ilsp.nlp.dis.titles.ruta;
+
+TYPESYSTEM gr.ilsp.types.DISTypeSystem;
+TYPESYSTEM gr.ilsp.types.ILSPTypeSystem;
+
+
+
+
+
+ 

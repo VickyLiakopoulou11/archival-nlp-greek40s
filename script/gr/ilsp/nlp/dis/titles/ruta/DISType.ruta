@@ -1,0 +1,23 @@
+PACKAGE gr.ilsp.nlp.dis.titles.ruta;
+
+// import the types of this type system:
+TYPESYSTEM gr.ilsp.types.DISTypeSystem;
+TYPESYSTEM gr.ilsp.types.ILSPTypeSystem;
+
+WORDLIST DocTypeList = 'DocTypes.txt';
+Document{-> MARKFAST(DISDocType, DocTypeList, true, 2, true)};
+
+WORDLIST AltDocTypeList = 'AltDocTypes.txt';
+Document{-> MARKFAST(DISDocType, AltDocTypeList, true, 2, true)};
+
+//DISDocType{PARTOFNEQ(DISDocType) -> UNMARK(DISDocType)};
+
+// FIXME: Right now only the first anno is kept. 
+// There has to be a better way than the following
+//DISDocType{POSITION(gr.ilsp.types.Sentence,1,true)->MARK(TempFirstAnno)};
+//DISDocType{-> UNMARK(DISDocType)};
+//TempFirstAnno{-> MARK(DISDocType)};
+//TempFirstAnno{-> UNMARK(TempFirstAnno)};
+DISDocType{-POSITION(gr.ilsp.types.Sentence,1,true)->UNMARK(DISDocType)};
+
+

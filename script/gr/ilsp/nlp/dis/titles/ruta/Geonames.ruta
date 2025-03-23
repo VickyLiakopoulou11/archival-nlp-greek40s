@@ -1,0 +1,40 @@
+PACKAGE gr.ilsp.nlp.dis.titles.ruta;
+
+TYPESYSTEM gr.ilsp.types.DISTypeSystem;
+TYPESYSTEM gr.ilsp.types.ILSPTypeSystem;
+
+// define and import an external dictionary containing 
+WORDLIST Geonames = 'Geonames.txt';
+
+// Match the lemma to the geonames wordlist
+Token{INLIST(Geonames, Token.lemma.value) -> MARK(Geoname)};
+((Geoname)"."){->MARK(Geoname)};
+
+//Declare Geodivision
+DECLARE GeoDivision;
+Token{REGEXP(Token.lemma.value,"(ΑΝ|ΑΝΑΤ||ΒΟΡ|ΔΥΤ|ΔΥΤΙΚ|K|ΚΕΝΤ|ΚΕΝΤΡ|ΝΟΤ)")->MARK(GeoDivision)};
+((GeoDivision)"."){->MARK(GeoDivision)};
+Token{Token.lemma.value=="βόρειος"->MARK(GeoDivision)};
+Token{Token.lemma.value=="νότιος"->MARK(GeoDivision)};
+Token{Token.lemma.value=="ανατολικός"->MARK(GeoDivision)};
+Token{Token.lemma.value=="δυτικός"->MARK(GeoDivision)};
+Token{Token.lemma.value=="κεντρικός"->MARK(GeoDivision)};
+Token{Token.lemma.value=="άνω"->MARK(GeoDivision)};
+Token{Token.lemma.value=="κάτω"->MARK(GeoDivision)};
+
+
+//Match Geodivision with Geoname.
+(GeoDivision Geoname{->UNMARK(Geoname)}){->MARK(Geoname)};
+
+//Add areas.
+DECLARE Area;
+Token{Token.lemma.value== "περιοχή"->MARK(Area)};
+(Area Geoname+{->UNMARK(Geoname)}){->MARK(Geoname)};
+
+//Add fortress.
+DECLARE Fortress;
+Token{Token.lemma.value== "οχυρός"->MARK(Fortress)};
+(Fortress Geoname+{->UNMARK(Geoname)}){->MARK(Geoname)};
+
+
+
